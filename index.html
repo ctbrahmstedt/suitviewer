@@ -59,6 +59,7 @@ document.querySelector('#color-controls').addEventListener('click', (event) => {
   const colorString = event.target.dataset.color;
 
   if (!colorString) {
+    console.log('colorstring not found: ');
     return;
   }
 
@@ -66,7 +67,7 @@ document.querySelector('#color-controls').addEventListener('click', (event) => {
       .map(numberString => parseFloat(numberString));
 
   console.log('Changing color to: ', color);
-  const [material] = modelViewerColor.model.materials;
+  const material = modelViewerColor.model.materials[5];
   material.pbrMetallicRoughness.setBaseColorFactor(color);
 });
 </script>
@@ -75,7 +76,7 @@ document.querySelector('#color-controls').addEventListener('click', (event) => {
     
     <form>
   <div>
-    <label for="diffuse">Choose a username: </label>
+    <label for="diffuse">Choose a texture: </label>
     <input type="text" id="diffuse" name="name">
   </div>
   <div id="html5DIV">
