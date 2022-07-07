@@ -55,7 +55,7 @@ modelViewerTexture1.addEventListener("load", () => {
     <script>
 const modelViewerColor = document.querySelector("model-viewer#suit");
 
-document.querySelector('color-controls').addEventListener('input', (event) => {
+document.querySelector('#colorcontrols').addEventListener('input', (event) => {
   const colorString = event.target.dataset.color;
 
   if (!colorString) {
@@ -81,8 +81,8 @@ document.querySelector('color-controls').addEventListener('input', (event) => {
   </div>
   <div>
   <!-- <div id="color-controls">-->  <h3>Or Use HTML5:</h3>
-    <label for="color-controls">Choose a texture: </label>
-    <input type="color" id="color-controls" value="#ff0000" style="width:25%;">
+    <label for="colorcontrols">Choose a texture: </label>
+    <input type="color" id="colorcontrols" value="#ff0000" style="width:25%;">
   </div>
 
   <div>
