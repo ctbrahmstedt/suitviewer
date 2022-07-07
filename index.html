@@ -55,7 +55,7 @@ modelViewerTexture1.addEventListener("load", () => {
     <script>
 const modelViewerColor = document.querySelector("model-viewer#suit");
 
-document.querySelector('#color-controls').addEventListener('click', (event) => {
+document.querySelector('#color-controls').addEventListener('input', (event) => {
   const colorString = event.target.dataset.color;
 
   if (!colorString) {
