@@ -51,26 +51,7 @@ modelViewerTexture1.addEventListener("load", () => {
 });
 
 </script>
-    
-    <script>
-const modelViewerColor = document.querySelector("model-viewer#suit");
 
-document.querySelector('#colorcontrols').addEventListener('input', (event) => {
-  const colorString = event.target.dataset.color;
-
-  if (!colorString) {
-    console.log('colorstring not found: ');
-    return;
-  }
-
-  const color = colorString.split(',')
-      .map(numberString => parseFloat(numberString));
-
-  console.log('Changing color to: ', color);
-  const material = modelViewerColor.model.materials[5];
-  material.pbrMetallicRoughness.setBaseColorFactor(color);
-});
-</script>
     
     
     
@@ -90,4 +71,25 @@ document.querySelector('#colorcontrols').addEventListener('input', (event) => {
   </div>
 </form>
   </body>
+  
+      
+    <script>
+const modelViewerColor = document.querySelector("model-viewer#suit");
+
+document.querySelector('#colorcontrols').addEventListener('input', (event) => {
+  const colorString = event.target.dataset.color;
+
+  if (!colorString) {
+    console.log('colorstring not found: ');
+    return;
+  }
+
+  const color = colorString.split(',')
+      .map(numberString => parseFloat(numberString));
+
+  console.log('Changing color to: ', color);
+  const material = modelViewerColor.model.materials[5];
+  material.pbrMetallicRoughness.setBaseColorFactor(color);
+});
+</script>
 </html>
