@@ -77,7 +77,7 @@ modelViewerTexture1.addEventListener("load", () => {
 const modelViewerColor = document.querySelector("model-viewer#suit");
 
 document.querySelector('#colorcontrols').addEventListener('input', (event) => {
-  const colorString = event.target.dataset.color;
+  const colorString = event;
 
   if (!colorString) {
     console.log('colorstring not found: ', colorString);
