@@ -9,21 +9,45 @@
     <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
     <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
   </head>
-  <body>
-    <!-- <model-viewer> HTML element -->
-    <model-viewer bounds="tight" enable-pan src="ben.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="0.83" exposure="2" environment-image="1d6deb67-0fe7-44e2-9b2a-74ecc455f5c4.hdr" skybox-image="1d6deb67-0fe7-44e2-9b2a-74ecc455f5c4.hdr">
-      <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
+</style>
+<body>
+<model-editor>
+  <div class="app">
+    <div class="editor-body-root">
+      <div class="mvContainer">
+        <model-viewer-preview id="editing_adapter">
+        </model-viewer-preview>
       </div>
-      <button slot="ar-button" id="ar-button">
-          View in your space
-      </button>
-      <div id="ar-prompt">
-          <img src="ar_hand_prompt.png">
-      </div>
-    </model-viewer>  
-    <script src="script.js"></script>
-    <!-- Loads <model-viewer> for browsers: -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  </body>
+      <me-tabs>
+        <me-tabbed-panel icon="import_export">
+          <me-export-panel></me-export-panel>
+          <div style="margin-bottom: 70px;"></div>
+          <div class="privacy">
+            This &lt;model-viewer&gt; editor does not send any imported content to servers except to deploy to your mobile device:
+            <a href="https://policies.google.com/privacy" class="privacy-link" target="_blank">
+              Privacy
+            </a>
+          </div>
+        </me-tabbed-panel>
+        <me-tabbed-panel icon="create">
+          <me-export-panel header></me-export-panel>
+          <me-ibl-selector></me-ibl-selector>
+          <me-animation-controls></me-animation-controls>
+          <me-hotspot-panel></me-hotspot-panel>
+        </me-tabbed-panel>
+        <me-tabbed-panel icon="photo_camera">
+          <me-export-panel header></me-export-panel>
+          <me-camera-settings></me-camera-settings>
+        </me-tabbed-panel>
+        <me-tabbed-panel icon="color_lens">
+          <me-materials-panel></me-materials-panel>
+        </me-tabbed-panel>
+        <me-tabbed-panel icon="search">
+          <me-inspector-panel></me-inspector-panel>
+        </me-tabbed-panel>
+      </me-tabs>
+    </div>
+  </div>
+</model-editor>
+</body>
 </html>
