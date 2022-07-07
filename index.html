@@ -11,7 +11,7 @@
   </head>
   <body>
     <!-- <model-viewer> HTML element -->
-    <model-viewer bounds="tight" enable-pan src="ben.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="0.83" exposure="2" environment-image="1d6deb67-0fe7-44e2-9b2a-74ecc455f5c4.hdr" skybox-image="1d6deb67-0fe7-44e2-9b2a-74ecc455f5c4.hdr">
+    <model-viewer bounds="tight" id="suit" enable-pan src="ben.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="0.83" exposure="2" environment-image="1d6deb67-0fe7-44e2-9b2a-74ecc455f5c4.hdr" skybox-image="1d6deb67-0fe7-44e2-9b2a-74ecc455f5c4.hdr">
       <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
       </div>
@@ -26,7 +26,7 @@
     <!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script type="module">
-const modelViewerTexture1 = document.querySelector("model-viewer#helmet");
+const modelViewerTexture1 = document.querySelector("model-viewer#suit");
 
 modelViewerTexture1.addEventListener("load", () => {
 
