@@ -98,7 +98,7 @@ document.querySelector('#colorcontrols').addEventListener('input', (event) => {
 
   /* <!--const color = colorString.split(',')-->
    <!--    .map(numberString => parseFloat(numberString)); --> */
-  const color = colorString;
+  const color =  [1, parseFloat(r)/255, parseFloat(g)/255, parseFloat(b)/255];
   console.log('Changing color to: ', color);
   const material = modelViewerColor.model.materials[5];
   material.pbrMetallicRoughness.setBaseColorFactor(color);
