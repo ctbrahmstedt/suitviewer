@@ -86,9 +86,9 @@ function hexToRgb(hex) {
 document.querySelector('#colorcontrols').addEventListener('input', (event) => {
   const colorString =     document.getElementById("colorcontrols").value; 
   /*var colorString2 = hexToRgb(colorString);*/
-  const r = 255 - hexToRgb(colorString).r;
-  const g = 255 - hexToRgb(colorString).g;
-  const b = 255 - hexToRgb(colorString).b;
+  const r =hexToRgb(colorString).r;
+  const g =hexToRgb(colorString).g;
+  const b =hexToRgb(colorString).b;
   console.log('colorstring =: ', colorString);
   console.log('r = ', r, 'green = ', g);
   if (!colorString) {
