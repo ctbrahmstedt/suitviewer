@@ -61,19 +61,53 @@ modelViewerTexture1.addEventListener("load", () => {
     <input type="text" id="diffuse" name="name">
   </div>
   <div>
-  <!-- <div id="color-controls">-->  <h3>Or Use HTML5:</h3>
+  <!-- <div id="color-controls">-->  <h3>Shirt color:</h3>
     <label for="colorcontrols">Choose a texture: </label>
     <input type="color" id="colorcontrols" value="#ff0000" style="width:25%;">
   </div>
 
   <div>
-    <button>Submit</button>
+     <!-- <div id="color-controls">-->  <h3>Stitching color:</h3>
+    <label for="Stitchcolorcontrols">Choose a texture: </label>
+    <input type="color" id="Stitchcolorcontrols" value="#ff0000" style="width:25%;">
   </div>
 </form>
   </body>
   
       
     <script>
+const modelViewerColor = document.querySelector("model-viewer#suit");
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+document.querySelector('#Stitchingcolorcontrols').addEventListener('input', (event) => {
+  const colorString =     document.getElementById("Stitchingcolorcontrols").value; 
+  /*var colorString2 = hexToRgb(colorString);*/
+  const r =hexToRgb(colorString).r;
+  const g =hexToRgb(colorString).g;
+  const b =hexToRgb(colorString).b;
+  console.log('colorstring =: ', colorString);
+  console.log('r = ', r, 'green = ', g);
+  if (!colorString) {
+    console.log('colorstring not found: ', colorString);
+    return;
+  }
+
+  /* <!--const color = colorString.split(',')-->
+   <!--    .map(numberString => parseFloat(numberString)); --> */
+  const color =  [parseFloat(r)/255, parseFloat(g)/255, parseFloat(b)/255, 1];
+  console.log('Changing color to: ', color);
+  const material = modelViewerColor.model.materials[3];
+  material.pbrMetallicRoughness.setBaseColorFactor(color);
+});
+</script>
+  
+      <script>
 const modelViewerColor = document.querySelector("model-viewer#suit");
 function hexToRgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -100,7 +134,7 @@ document.querySelector('#colorcontrols').addEventListener('input', (event) => {
    <!--    .map(numberString => parseFloat(numberString)); --> */
   const color =  [parseFloat(r)/255, parseFloat(g)/255, parseFloat(b)/255, 1];
   console.log('Changing color to: ', color);
-  const material = modelViewerColor.model.materials[5];
+  const material = modelViewerColor.model.materials[7];
   material.pbrMetallicRoughness.setBaseColorFactor(color);
 });
 </script>
