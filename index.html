@@ -132,8 +132,8 @@ document.querySelector('#colorcontrols').addEventListener('input', (event) => {
    <!--    .map(numberString => parseFloat(numberString)); --> */
   const color =  [parseFloat(r)/255, parseFloat(g)/255, parseFloat(b)/255, 1];
   console.log('Changing color to: ', color);
-  const material = modelViewerColor.model.materials[7];
-  material.pbrMetallicRoughness.setBaseColorFactor(color);
+  const material2 = modelViewerColor.model.materials[7];
+  material2.pbrMetallicRoughness.setBaseColorFactor(color);
 });
 </script>
 </html>
