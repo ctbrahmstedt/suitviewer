@@ -78,8 +78,12 @@ const modelViewerColor = document.querySelector("model-viewer#suit");
 
 document.querySelector('#colorcontrols').addEventListener('input', (event) => {
   const colorString =     document.getElementById("colorcontrols").value; 
-
+  var colorString2 = w3color(colorString);
+  const r = colorString2.red;
+  const g = colorString2.green;
+  const b = colorString2.blue;
   console.log('colorstring =: ', colorString);
+  console.log('r = ', r, 'green = ', g);
   if (!colorString) {
     console.log('colorstring not found: ', colorString);
     return;
