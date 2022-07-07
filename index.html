@@ -61,14 +61,12 @@ modelViewerTexture1.addEventListener("load", () => {
     <input type="text" id="diffuse" name="name">
   </div>
   <div>
-  <!-- <div id="color-controls">-->  <h3>Shirt color:</h3>
-    <label for="colorcontrols">Choose a texture: </label>
+    <label for="colorcontrols">Shirt color: </label>
     <input type="color" id="colorcontrols" value="#ff0000" style="width:25%;">
   </div>
 
   <div>
-     <!-- <div id="color-controls">-->  <h3>Stitching color:</h3>
-    <label for="Stitchcolorcontrols">Choose a texture: </label>
+    <label for="Stitchcolorcontrols">Stitching color:</label>
     <input type="color" id="Stitchcolorcontrols" value="#ff0000" style="width:25%;">
   </div>
 </form>
@@ -85,8 +83,8 @@ function hexToRgb(hex) {
     b: parseInt(result[3], 16)
   } : null;
 }
-document.querySelector('#Stitchingcolorcontrols').addEventListener('input', (event) => {
-  const colorString =     document.getElementById("Stitchingcolorcontrols").value; 
+document.querySelector('#Stitchcolorcontrols').addEventListener('input', (event) => {
+  const colorString =     document.getElementById("Stitchcolorcontrols").value; 
   /*var colorString2 = hexToRgb(colorString);*/
   const r =hexToRgb(colorString).r;
   const g =hexToRgb(colorString).g;
