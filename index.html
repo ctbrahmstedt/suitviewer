@@ -51,10 +51,36 @@ modelViewerTexture1.addEventListener("load", () => {
 });
 
 </script>
+    
+    <script>
+const modelViewerColor = document.querySelector("model-viewer#suit");
+
+document.querySelector('#color-controls').addEventListener('click', (event) => {
+  const colorString = event.target.dataset.color;
+
+  if (!colorString) {
+    return;
+  }
+
+  const color = colorString.split(',')
+      .map(numberString => parseFloat(numberString));
+
+  console.log('Changing color to: ', color);
+  const [material] = modelViewerColor.model.materials;
+  material.pbrMetallicRoughness.setBaseColorFactor(color);
+});
+</script>
+    
+    
+    
     <form>
   <div>
     <label for="diffuse">Choose a username: </label>
     <input type="text" id="diffuse" name="name">
+  </div>
+  <div id="html5DIV">
+  <h3>Or Use HTML5:</h3>
+  <input type="#color-controls" id="#color-controls" onchange="clickColor(0, -1, -1, 5)" value="#ff0000" style="width:85%;">
   </div>
   <div>
     <button>Submit</button>
