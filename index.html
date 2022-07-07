@@ -77,15 +77,16 @@ modelViewerTexture1.addEventListener("load", () => {
 const modelViewerColor = document.querySelector("model-viewer#suit");
 
 document.querySelector('#colorcontrols').addEventListener('input', (event) => {
-  const colorString = event;
+  const colorString =     document.getElementById("html5colorpicker").value = cObj.toHexString();  
+
   console.log('colorstring =: ', colorString);
   if (!colorString) {
     console.log('colorstring not found: ', colorString);
     return;
   }
 
-  <!--const color = colorString.split(',')-->
-   <!--    .map(numberString => parseFloat(numberString)); -->
+  /*<!--const color = colorString.split(',')-->
+  /* <!--    .map(numberString => parseFloat(numberString)); -->
   const color = event;
   console.log('Changing color to: ', color);
   const material = modelViewerColor.model.materials[5];
