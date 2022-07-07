@@ -77,7 +77,7 @@ modelViewerTexture1.addEventListener("load", () => {
 const modelViewerColor = document.querySelector("model-viewer#suit");
 
 document.querySelector('#colorcontrols').addEventListener('input', (event) => {
-  const colorString =     document.getElementById("colorcontrols").value = cObj.toHexString();  
+  const colorString =     document.getElementById("colorcontrols").value; 
 
   console.log('colorstring =: ', colorString);
   if (!colorString) {
@@ -87,7 +87,7 @@ document.querySelector('#colorcontrols').addEventListener('input', (event) => {
 
   /* <!--const color = colorString.split(',')-->
    <!--    .map(numberString => parseFloat(numberString)); --> */
-  const color = event;
+  const color = colorString;
   console.log('Changing color to: ', color);
   const material = modelViewerColor.model.materials[5];
   material.pbrMetallicRoughness.setBaseColorFactor(color);
