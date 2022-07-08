@@ -44,7 +44,7 @@ modelViewerTexture1.addEventListener("load", () => {
 
   frame.addEventListener('click', () => {
   var inputVal = document.getElementById("scabal").value;
-  var scabal_path = '/scabal_assets/' + inputVal + '.jpg';
+  var scabal_path = '/suitviewer/scabal_assets/' + inputVal + '.jpg';
   alert(scabal_path);
   const texture2 = modelViewerTexture1.createTexture(scabal_path);
   material['baseColorTexture'].setTexture(texture2);
