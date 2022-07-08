@@ -34,6 +34,7 @@ modelViewerTexture1.addEventListener("load", () => {
 
   const createAndApplyTexture = async (channel, event) => {
     const texture = await modelViewerTexture1.createTexture(event.target.value);
+    console.log('texture =: ', texture);
     if (channel.includes('base') || channel.includes('metallic')) {
       material.pbrMetallicRoughness[channel].setTexture(texture);
     } else {
@@ -47,6 +48,7 @@ modelViewerTexture1.addEventListener("load", () => {
   var scabal_path = '/suitviewer/scabal_assets/' + inputVal + '.jpg';
   alert(scabal_path);
   const texture2 = modelViewerTexture1.createTexture(scabal_path);
+   console.log('texture2 =: ', texture2);
   material['baseColorTexture'].setTexture(texture2);
         });
   document.querySelector('#diffuse').addEventListener('input', (event) => {
