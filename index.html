@@ -58,7 +58,8 @@ modelViewerTexture1.addEventListener("load", () => {
 
         });
   document.querySelector('#diffuse').addEventListener('input', (event) => {
-    createAndApplyTexture('baseColorTexture', event);
+    try {createAndApplyTexture('baseColorTexture', event);}
+    catch (error) {alert("Whoops, I don't have that texture in my database. Try something else."); }
   });
 
 
