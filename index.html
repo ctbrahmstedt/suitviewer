@@ -45,7 +45,7 @@ modelViewerTexture1.addEventListener("load", () => {
   
   }
   const createAndApplyTexture2 = async (channel, event) => {
-    const texture2 = await modelViewerTexture1.createTexture(scabal_path);
+    const texture2 = await modelViewerTexture1.createTexture(event);
       console.log('texture2 =: ', texture2);
     material['baseColorTexture'].setTexture(texture2);
   }
