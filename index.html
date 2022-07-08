@@ -48,7 +48,8 @@ modelViewerTexture1.addEventListener("load", () => {
     console.log('event2 =: ', event);
     const texture2 = await modelViewerTexture1.createTexture(event);
     console.log('texture2 =: ', texture2);
-    material.pbrMetallicRoughness[channel].setTexture(texture2);
+    try {material.pbrMetallicRoughness[channel].setTexture(texture2);}
+    catch (error) {alert("Whoops, I don't have that texture in my database. Try something else."); }
   }
     
     frame.addEventListener('click', () => {
@@ -58,8 +59,8 @@ modelViewerTexture1.addEventListener("load", () => {
 
         });
   document.querySelector('#diffuse').addEventListener('input', (event) => {
-    try {createAndApplyTexture('baseColorTexture', event);}
-    catch (error) {alert("Whoops, I don't have that texture in my database. Try something else."); }
+    createAndApplyTexture('baseColorTexture', event);
+    
   });
 
 
