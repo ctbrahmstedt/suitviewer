@@ -41,7 +41,7 @@ modelViewerTexture1.addEventListener("load", () => {
     } else {
       material[channel].setTexture(texture);
     }
-    material['baseColorTexture'].setTexture(texture);
+    
   
   }
   const createAndApplyTexture2 = async (channel, event) => {
@@ -54,7 +54,6 @@ modelViewerTexture1.addEventListener("load", () => {
     frame.addEventListener('click', () => {
     var inputVal = document.getElementById("scabal").value;
     var scabal_path = 'https://ctbrahmstedt.github.io/suitviewer/scabal_assets/' + inputVal + '.jpg';
-    alert(scabal_path);
     createAndApplyTexture2('baseColorTexture', scabal_path);
 
         });
