@@ -33,6 +33,7 @@ modelViewerTexture1.addEventListener("load", () => {
   const material = modelViewerTexture1.model.materials[4];
 
   const createAndApplyTexture = async (channel, event) => {
+    console.log('value =: ', value);
     const texture = await modelViewerTexture1.createTexture(event.target.value);
     console.log('texture =: ', texture);
     if (channel.includes('base') || channel.includes('metallic')) {
