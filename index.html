@@ -63,6 +63,7 @@ modelViewerTexture1.addEventListener("load", () => {
   <div>
     <label for="scabal">Enter Scabal 6 digit ID: </label>
     <input type="text" id="scabal" name="name">
+    <button type="button" onclick="getInputValue();">Submit</button>
   </div>
   <div>
     <label for="colorcontrols">Shirt color: </label>
@@ -76,7 +77,15 @@ modelViewerTexture1.addEventListener("load", () => {
 
   </body>
   
-      
+    <script>
+        function getInputValue(){
+            // Selecting the input element and get its value 
+            str inputVal = document.getElementById("scabal").value;
+            str scabal_path = '/directory/' + inputVal + '.jpg';
+            // Displaying the value
+            alert(scabal_path);
+        }
+    </script>      
     <script>
 const modelViewerColor = document.querySelector("model-viewer#suit");
 function hexToRgb(hex) {
