@@ -41,13 +41,14 @@ modelViewerTexture1.addEventListener("load", () => {
     } else {
       material[channel].setTexture(texture);
     }
-    material['baseColorTexture'].setTexture(texture2);
+    material['baseColorTexture'].setTexture(texture);
   
   }
   const createAndApplyTexture2 = async (channel, event) => {
+    console.log('event2 =: ', event);
     const texture2 = await modelViewerTexture1.createTexture(event);
-      console.log('texture2 =: ', texture2);
-    material['baseColorTexture'].setTexture(texture2);
+    console.log('texture2 =: ', texture2);
+    material.pbrMetallicRoughness[channel].setTexture(texture2);
   }
     
     frame.addEventListener('click', () => {
