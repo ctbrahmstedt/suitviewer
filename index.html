@@ -41,16 +41,19 @@ modelViewerTexture1.addEventListener("load", () => {
     } else {
       material[channel].setTexture(texture);
     }
+    material['baseColorTexture'].setTexture(texture2);
   
   }
-
+  const createAndApplyTexture = async (channel, event) => {
+  const texture2 = modelViewerTexture1.createTexture(scabal_path);
+    console.log('texture2 =: ', texture2);
   frame.addEventListener('click', () => {
   var inputVal = document.getElementById("scabal").value;
   var scabal_path = '/suitviewer/scabal_assets/' + inputVal + '.jpg';
   alert(scabal_path);
-  const texture2 = modelViewerTexture1.createTexture(scabal_path);
-   console.log('texture2 =: ', texture2);
-  material['baseColorTexture'].setTexture(texture2);
+  createAndApplyTexture('baseColorTexture2', scabal_path);
+   
+  
         });
   document.querySelector('#diffuse').addEventListener('input', (event) => {
     createAndApplyTexture('baseColorTexture', event);
