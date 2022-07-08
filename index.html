@@ -78,6 +78,7 @@ modelViewerTexture1.addEventListener("load", () => {
   </body>
   
     <script>
+        const modelViewerTexture1 = document.querySelector("model-viewer#suit");
         const material = modelViewerTexture1.model.materials[4];
 
         const createAndApplyTexture = async (channel, event) => {
