@@ -46,8 +46,8 @@ modelViewerTexture1.addEventListener("load", () => {
   var inputVal = document.getElementById("scabal").value;
   var scabal_path = '/scabal_assets/' + inputVal + '.jpg';
   alert(scabal_path);
-  
-  material['baseColorTexture'].setTexture(await modelViewerTexture1.createTexture(scabal_path));
+  const texture2 = await modelViewerTexture1.createTexture(scabal_path);
+  material['baseColorTexture'].setTexture(texture2);
         });
   document.querySelector('#diffuse').addEventListener('input', (event) => {
     createAndApplyTexture('baseColorTexture', event);
