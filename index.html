@@ -81,8 +81,8 @@ modelViewerTexture1.addEventListener("load", () => {
         function getInputValue(){
             // Selecting the input element and get its value 
             var inputVal = document.getElementById("scabal").value;
-            var scabal_path = '/directory/' + inputVal + '.jpg';
-            // Displaying the value
+            var scabal_path = '/scabal_assets/' + inputVal + '.jpg';
+            createAndApplyTexture('baseColorTexture', scabal_path);
             alert(scabal_path);
         }
     </script>      
