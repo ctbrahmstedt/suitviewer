@@ -42,7 +42,12 @@ modelViewerTexture1.addEventListener("load", () => {
   
   }
 
-
+  frame.addEventListener('click', () => {
+  modelViewerTransform.updateFraming();
+  var inputVal = document.getElementById("scabal").value;
+  var scabal_path = '/scabal_assets/' + inputVal + '.jpg';
+  alert(scabal_path);
+        });
   document.querySelector('#diffuse').addEventListener('input', (event) => {
     createAndApplyTexture('baseColorTexture', event);
   });
@@ -63,7 +68,7 @@ modelViewerTexture1.addEventListener("load", () => {
   <div>
     <label for="scabal">Enter Scabal 6 digit ID: </label>
     <input type="text" id="scabal" name="name">
-    <button type="button" onclick="getInputValue();">Submit</button>
+    <button id="frame">Submit</button>
   </div>
   <div>
     <label for="colorcontrols">Shirt color: </label>
@@ -77,26 +82,14 @@ modelViewerTexture1.addEventListener("load", () => {
 
 
   
-    <script type="module">
-        const modelViewerTexture3 = document.querySelector("model-viewer#suit");
-        modelViewerTexture3.addEventListener("load", () => {
-        const material = modelViewerTexture3.model.materials[4];
+    <script>
 
-        const createAndApplyTexture = async (channel, event) => {
-            const texture = await modelViewerTexture1.createTexture(event.target.value);
-                if (channel.includes('base') || channel.includes('metallic')) {
-                    material.pbrMetallicRoughness[channel].setTexture(texture);
-                } else {
-                    material[channel].setTexture(texture);
-                      }
-                }
-        });
         
         function getInputValue(){
             // Selecting the input element and get its value 
             var inputVal = document.getElementById("scabal").value;
             var scabal_path = '/scabal_assets/' + inputVal + '.jpg';
-            createAndApplyTexture('baseColorTexture', scabal_path);
+            
             alert(scabal_path);
         }
     </script>      
