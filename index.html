@@ -79,6 +79,7 @@ modelViewerTexture1.addEventListener("load", () => {
   
     <script type="module">
         const modelViewerTexture3 = document.querySelector("model-viewer#suit");
+        modelViewerTexture3.addEventListener("load", () => {
         const material = modelViewerTexture3.model.materials[4];
 
         const createAndApplyTexture = async (channel, event) => {
@@ -89,6 +90,7 @@ modelViewerTexture1.addEventListener("load", () => {
                     material[channel].setTexture(texture);
                       }
                 }
+        }
         function getInputValue(){
             // Selecting the input element and get its value 
             var inputVal = document.getElementById("scabal").value;
