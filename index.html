@@ -56,8 +56,8 @@ modelViewerTexture1.addEventListener("load", () => {
     frame.addEventListener('click', () => {
     var inputVal = document.getElementById("scabal").value;
     var scabal_path = 'https://ctbrahmstedt.github.io/suitviewer/scabal_assets/' + inputVal + '.jpg';
-    createAndApplyTexture2('baseColorTexture', scabal_path);
-
+    try {createAndApplyTexture2('baseColorTexture', scabal_path);}
+    catch (error) {alert("Whoops, I don't have that texture in my database yet. Try something one!"); }
         });
   document.querySelector('#diffuse').addEventListener('input', (event) => {
     createAndApplyTexture('baseColorTexture', event);
@@ -74,7 +74,7 @@ modelViewerTexture1.addEventListener("load", () => {
     
 
   <div>
-    <label for="diffuse">Choose a texture: </label>
+    <label for="diffuse">Paste a weblink to a .jpg file: </label>
     <input type="text" id="diffuse" name="name">
   </div>
   <div>
