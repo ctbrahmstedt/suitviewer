@@ -66,7 +66,7 @@ modelViewerTexture1.addEventListener("load", () => {
     frame.addEventListener('click', () => {
     var inputVal = document.getElementById("scabal").value;
     var scabal_path = 'https://ctbrahmstedt.github.io/suitviewer/scabal_assets/' + inputVal + '.jpg';
-    if(doesFileExist(scabal_path){
+    if(doesFileExist(scabal_path)){
       createAndApplyTexture2('baseColorTexture', scabal_path);}
     else{
       alert("Whoops, I don't have that texture in my database yet. Try another one!");                                          
@@ -185,5 +185,10 @@ document.querySelector('#colorcontrols').addEventListener('input', (event) => {
   const material2 = modelViewerColor2.model.materials[5];
   material2.pbrMetallicRoughness.setBaseColorFactor(color);
 });
+</script>
+  <script>
+function myFunction() {
+  alert(""This demo is a prototype. If a texture does not populate correctly, please try a different one."");
+}
 </script>
 </html>
