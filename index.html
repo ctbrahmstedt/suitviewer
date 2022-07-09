@@ -46,11 +46,11 @@ modelViewerTexture1.addEventListener("load", () => {
   }
   const createAndApplyTexture2 = async (channel, event) => {
     console.log('event2 =: ', event);
-    try {const texture2 = await modelViewerTexture1.createTexture(event);}
-    catch (error) {alert("Whoops, I don't have that texture in my database. Try something else."); }
-    console.log('texture2 =: ', texture2);
-    material.pbrMetallicRoughness[channel].setTexture(texture2);
+    try {const texture2 = await modelViewerTexture1.createTexture(event);
     
+    console.log('texture2 =: ', texture2);
+    material.pbrMetallicRoughness[channel].setTexture(texture2);}
+    catch (error) {alert("Whoops, I don't have that texture in my database. Try something else."); }
   }
     
     frame.addEventListener('click', () => {
