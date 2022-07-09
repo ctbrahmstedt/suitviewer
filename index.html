@@ -27,8 +27,7 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script type="module">
 const modelViewerTexture1 = document.querySelector("model-viewer#suit");
-
-modelViewerTexture1.addEventListener("load", () => {
+      
   function doesFileExist(urlToFile) {
       var xhr = new XMLHttpRequest();
       xhr.open('HEAD', urlToFile, false);
@@ -40,6 +39,9 @@ modelViewerTexture1.addEventListener("load", () => {
           return true;
       }
   }
+      
+modelViewerTexture1.addEventListener("load", () => {
+
   const material = modelViewerTexture1.model.materials[4];
 
   const createAndApplyTexture = async (channel, event) => {
@@ -75,7 +77,7 @@ modelViewerTexture1.addEventListener("load", () => {
       
   
   document.querySelector('#diffuse').addEventListener('input', (event) => {
-    createAndApplyTexture('baseColorTexture', event);}
+    createAndApplyTexture('baseColorTexture', event);
 
     
   });
