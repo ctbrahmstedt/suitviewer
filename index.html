@@ -29,7 +29,17 @@
 const modelViewerTexture1 = document.querySelector("model-viewer#suit");
 
 modelViewerTexture1.addEventListener("load", () => {
+  function doesFileExist(urlToFile) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('HEAD', urlToFile, false);
+      xhr.send();
 
+      if (xhr.status == "404") {
+          return false;
+      } else {
+          return true;
+      }
+  }
   const material = modelViewerTexture1.model.materials[4];
 
   const createAndApplyTexture = async (channel, event) => {
@@ -56,11 +66,17 @@ modelViewerTexture1.addEventListener("load", () => {
     frame.addEventListener('click', () => {
     var inputVal = document.getElementById("scabal").value;
     var scabal_path = 'https://ctbrahmstedt.github.io/suitviewer/scabal_assets/' + inputVal + '.jpg';
-    try {createAndApplyTexture2('baseColorTexture', scabal_path);}
-    catch (error) {alert("Whoops, I don't have that texture in my database yet. Try something one!"); }
+    if(doesFileExist(scabal_path){
+      createAndApplyTexture2('baseColorTexture', scabal_path);}
+    else{
+      alert("Whoops, I don't have that texture in my database yet. Try another one!");                                          
+     }
+    
         });
+  
   document.querySelector('#diffuse').addEventListener('input', (event) => {
-    createAndApplyTexture('baseColorTexture', event);
+    createAndApplyTexture('baseColorTexture', event);}
+
     
   });
 
