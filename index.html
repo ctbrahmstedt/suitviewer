@@ -53,9 +53,8 @@ modelViewerTexture1.addEventListener("load", () => {
     } else {
       material[channel].setTexture(texture);
     }
-    
-  
   }
+  
   const createAndApplyTexture2 = async (channel, event) => {
     console.log('event2 =: ', event);
     try {const texture2 = await modelViewerTexture1.createTexture(event);
@@ -73,7 +72,7 @@ modelViewerTexture1.addEventListener("load", () => {
     else{
       alert("Whoops, I don't have that texture in my database yet. Try another one!");                                          
      }
-    }
+    });
       
   
   document.querySelector('#diffuse').addEventListener('input', (event) => {
